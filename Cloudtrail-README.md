@@ -237,6 +237,35 @@ LIMIT 50;
 ```
 
 ---
+# SPECIFIC DATE 
+```
+SELECT
+  record.eventTime,
+  record.eventSource,
+  record.eventName,
+  record.sourceIPAddress
+FROM cloudtrail_logs
+CROSS JOIN UNNEST(Records) AS t(record)
+WHERE date(from_iso8601_timestamp(record.eventTime))
+      = DATE '2026-05-23'
+ORDER BY record.eventTime DESC;
+```
+---
+# time based like last 15 min 40 min
+
+```
+SELECT
+  record.eventTime,
+  record.eventSource,
+  record.eventName,
+  record.sourceIPAddress
+FROM cloudtrail_logs
+CROSS JOIN UNNEST(Records) AS t(record)
+WHERE from_iso8601_timestamp(record.eventTime)
+      >= current_timestamp - interval '15' minute
+ORDER BY record.eventTime DESC;
+```
+---
 
 # Show Recent API Calls
 
