@@ -177,7 +177,16 @@ Run the following query:
 ```sql
 CREATE DATABASE cloudwatch_logs_db;
 ```
+### if no un is fade out mens do this process
+```
+Go like this in Athena:
 
+Open Amazon Athena Console
+Click Settings (top right)
+Under Manage settings → Query result location
+Enter your bucket path like:
+s3://logs-s33-vsv/athena-results/
+```
 ---
 
 # Step 11: Create External Table
