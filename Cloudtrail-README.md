@@ -1,6 +1,6 @@
 # AWS CloudTrail Logs Querying Using Athena
 
-## Step 1: Create CloudTrail
+## Step 1: Create CloudTrail 
 
 1. Open AWS Console
 2. Search for:
